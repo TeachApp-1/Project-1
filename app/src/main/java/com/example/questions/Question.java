@@ -1,5 +1,6 @@
 package com.example.questions;
 
+
 public class Question {
     String question;
     String option1;
@@ -7,6 +8,7 @@ public class Question {
     String option3;
     String option4;
     int correctAnswer;
+    String name = "yossi";
 
     public Question(String question, String option1, String option2, String option3, String option4, int correctAnswer) {
         this.question = question;
