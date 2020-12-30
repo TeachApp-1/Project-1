@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-38dp"
+        tools:layout_editor_absoluteY="-58dp">
+
+        <TextView
+            android:id="@+id/questionNum"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#0091EA"
+            android:gravity="center"
+            android:text="1/10" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="212dp"
+            android:background="#304FFE"
+            android:gravity="center"
+            android:hapticFeedbackEnabled="false"
+            android:text="Question" />
+
+        <TextView
+            android:id="@+id/questionTime"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:background="#2962FF"
+            android:gravity="center"
+            android:text="20" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="option 1"
+                app:backgroundTint="#AA00FF" />
+
+            <Button
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="option 2"
+                app:backgroundTint="#AA00FF" />
+
+            <Button
+                android:id="@+id/option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="option 3"
+                app:backgroundTint="#AA00FF" />
+
+            <Button
+                android:id="@+id/option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="option 4"
+                app:backgroundTint="#AA00FF" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
