@@ -1,0 +1,20 @@
+com/example/redchapters/SetsActivity.java
+ com.example.redchapters.SetsActivity
+com/example/redchapters/SplashActivity.java
+ com.example.redchapters.SplashActivity
+ com.example.redchapters.SplashActivity$1
+com/example/redchapters/BuildConfig.java
+ com.example.redchapters.BuildConfig
+com/example/redchapters/MainActivity.java
+ com.example.redchapters.MainActivity
+ com.example.redchapters.MainActivity$1
+com/example/redchapters/CatGridAdapter.java
+ com.example.redchapters.CatGridAdapter
+ com.example.redchapters.CatGridAdapter$1
+com/example/redchapters/CategoryActivity.java
+ com.example.redchapters.CategoryActivity
+com/example/redchapters/QuestionActivity.java
+ com.example.redchapters.QuestionActivity
+com/example/redchapters/SetsAdapter.java
+ com.example.redchapters.SetsAdapter
+ com.example.redchapters.SetsAdapter$1
