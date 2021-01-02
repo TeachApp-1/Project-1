@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="233dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/setsToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/white"
+            android:background="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/SetsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Sets"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            />
+
+        <GridView
+            android:id="@+id/setsGridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="100dp"
+            android:gravity="center"
+            android:horizontalSpacing="16dp"
+            android:verticalSpacing="16dp"
+            android:padding="16dp"
+            android:numColumns="auto_fit" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
