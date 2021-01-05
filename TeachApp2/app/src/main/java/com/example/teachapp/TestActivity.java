@@ -1,6 +1,7 @@
 package com.example.teachapp;
 
 import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,6 +24,7 @@ public class TestActivity extends AppCompatActivity {
     private TextView dialogText;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,11 +55,12 @@ public class TestActivity extends AppCompatActivity {
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         testView.setLayoutManager(layoutManager);
 
-        DbQuery.loadTestData(new MyCompleteListener()
-        {
+
+        //loadTestData();
+
+        DbQuery.loadTestData(new MyCompleteListener() {
             @Override
-            public void onSuccess()
-            {
+            public void onSuccess() {
 
                 adapter = new TestAdapter(DbQuery.g_testList);
                 testView.setAdapter(adapter);

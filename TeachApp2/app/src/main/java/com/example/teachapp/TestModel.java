@@ -20,8 +20,8 @@ public class TestModel {
         this.testID = testID;
     }
 
-    public String getTopScore() {
-        return topScore;
+    public int getTopScore() {
+        return Integer.parseInt(topScore);
     }
 
     public void setTopScore(String topScore) {

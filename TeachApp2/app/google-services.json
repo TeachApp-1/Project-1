@@ -168,14 +168,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "13268133073-cqdvhaq0l8qppfe5im7defqca93l04pl.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.teachapp",
-            "certificate_hash": "bf2ffa56e2260b88996593c69be0dba6873df9b6"
-          }
-        },
-        {
           "client_id": "13268133073-30v757a0tobnqqkm7ocguv5jg5jqgnd3.apps.googleusercontent.com",
           "client_type": 3
         }

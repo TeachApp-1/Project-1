@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.teachapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -59,7 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpB.setOnClickListener(view -> {
 
             if (validate()) {
-                singUpNewUser();
+                signUpNewUser();
             }
         });
 
@@ -118,7 +117,7 @@ public class SignUpActivity extends AppCompatActivity {
         return true;
     }
 
-    private void singUpNewUser()
+    private void signUpNewUser()
     {
         progressDialog.show();
 
@@ -137,7 +136,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     public void onSuccess()
                                     {
                                         progressDialog.dismiss();
-                                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                                        Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
                                         startActivity(intent);
                                         SignUpActivity.this.finish();
                                     }
