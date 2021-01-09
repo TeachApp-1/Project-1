@@ -201,7 +201,8 @@ public class CategoryActivity extends AppCompatActivity
     {
         if(item.getItemId() == android.R.id.home)
         {
-            CategoryActivity.this.finish();
+            Intent intent = new Intent(CategoryActivity.this, AdminSelectPage.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

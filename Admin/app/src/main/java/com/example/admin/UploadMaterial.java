@@ -87,6 +87,8 @@ public class UploadMaterial extends AppCompatActivity {
         progressDialog.setProgress(0);
         progressDialog.show();
 
+        
+
         String fileName = System.currentTimeMillis() + "";
         StorageReference storageReference = storage.getReference();// return root path
 
