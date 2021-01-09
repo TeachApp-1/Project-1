@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,8 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseFirestore firestore;
     private int setNo;
     private Dialog loadingDialog;
+    private Button redButton, greenButton, blueButton, shareButton;
+    private LinearLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,50 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
         option2 = findViewById(R.id.option2);
         option3 = findViewById(R.id.option3);
         option4 = findViewById(R.id.option4);
+
+        redButton = findViewById(R.id.red_button);
+        greenButton = findViewById(R.id.green_button);
+        blueButton = findViewById(R.id.blue_button);
+        layout = findViewById(R.id.linearLayout2);
+        shareButton = findViewById(R.id.question_share_button);
+
+        redButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layout.setBackgroundResource(R.drawable.red_background);
+            }
+        });
+
+        greenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layout.setBackgroundResource(R.drawable.green_background);
+            }
+        });
+
+        blueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layout.setBackgroundResource(R.drawable.blue_background);
+            }
+        });
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String shareSub = questionList.get(quesNum).getQuestion();
+                String shareHelp =  "1. " + questionList.get(quesNum).getOptionA() + "\n" +
+                                    "2. " + questionList.get(quesNum).getOptionB() + "\n" +
+                                    "3. " + questionList.get(quesNum).getOptionC() + "\n" +
+                                    "4. " + questionList.get(quesNum).getOptionD() + "\n";
+                String shareBody = shareHelp;
+                intent.putExtra(Intent.EXTRA_SUBJECT, shareSub);
+                intent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(intent, "Share using"));
+            }
+        });
 
         option1.setOnClickListener(this);
         option2.setOnClickListener(this);
@@ -106,7 +153,7 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
 
                         String count = quesListDoc.getString("COUNT");
 
-                        for(int i=0; i < Integer.valueOf(count); i++)
+                        for(int i=0; i < Integer.parseInt(count) ; i++)
                         {
                             String quesID = quesListDoc.getString("Q" + String.valueOf(i+1) + "_ID");
 
@@ -118,9 +165,8 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
                                     quesDoc.getString("B"),
                                     quesDoc.getString("C"),
                                     quesDoc.getString("D"),
-                                    Integer.valueOf(quesDoc.getString("ANSWER"))
+                                    Integer.parseInt(quesDoc.getString("ANSWER"))
                             ));
-
                         }
 
                         setQuestion();
@@ -136,7 +182,6 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
                         loadingDialog.dismiss();
                     }
                 });
-
     }
 
     private void setQuestion()
@@ -365,7 +410,6 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
         countDown.cancel();
     }
 }

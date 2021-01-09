@@ -4,6 +4,7 @@
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:gravity="center"
+    android:id="@+id/linearLayout6"
     android:layout_margin="16dp"
     android:background="@drawable/round_corner"
     android:backgroundTint="#2196F3"

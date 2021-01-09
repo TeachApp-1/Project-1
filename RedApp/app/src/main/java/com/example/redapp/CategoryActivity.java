@@ -7,6 +7,8 @@ import android.widget.GridView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.Objects;
+
 import static com.example.redapp.SplashActivity.catList;
 
 public class CategoryActivity extends AppCompatActivity {
@@ -20,16 +22,13 @@ public class CategoryActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Categories");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("קטגוריות");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         catGrid = findViewById(R.id.catGridview);
 
-
         CatGridAdapter adapter = new CatGridAdapter(catList);
         catGrid.setAdapter(adapter);
-
-
     }
 
 

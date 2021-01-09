@@ -22,6 +22,7 @@ import java.util.List;
 import static com.example.redapp.SplashActivity.catList;
 import static com.example.redapp.SplashActivity.selected_cat_index;
 
+
 public class SetsActivity extends AppCompatActivity {
 
     private GridView sets_grid;
@@ -68,7 +69,6 @@ public class SetsActivity extends AppCompatActivity {
                 .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-
                 long noOfSets = (long)documentSnapshot.get("SETS");
 
                 for(int i=1; i <= noOfSets; i++)
@@ -80,18 +80,14 @@ public class SetsActivity extends AppCompatActivity {
                 sets_grid.setAdapter(adapter);
 
                 loadingDialog.dismiss();
-
             }
-        })
-                .addOnFailureListener(new OnFailureListener() {
+        }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(SetsActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
                         loadingDialog.dismiss();
                     }
                 });
-
-
     }
 
     @Override
